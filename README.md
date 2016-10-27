@@ -8,4 +8,9 @@ author and year published.
 The user can then save there books in a collection.
 
 Steps
--set up MVC and make sure it is running
+
+Set up MVC
+Set up server
+Make database
+Set up the routes
+Make the models
