@@ -1,16 +1,15 @@
 # Project-2
 
 Description
-Create an app where the user can browse and select what
-book they are looking for. The user will be able to filter
-his/her search based on specifications such as title,
-author and year published.
-The user can then save there books in a collection.
+
+App that allows users to check the nutritional content
+for a specific food, the user will be allowed to save
+the food item to a collection.
 
 Steps
 
-Set up MVC
-Set up server
-Make database
-Set up the routes
-Make the models
+1)Set up MVC
+2)Set up server
+3)Make database
+4)Set up the routes
+5)Make the models
