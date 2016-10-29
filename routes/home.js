@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { food } = require('../services/nutrition');
+const { findFood } = require('../services/nutrition');
 
-router.get('/', (req, res) => {
+router.get('/', findFood, (req, res) => {
   console.log(res.nutrition);
   res.render('index', {
     food: res.nutrition,
