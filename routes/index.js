@@ -8,7 +8,7 @@ const methodOverride = require('method-override');
 // middleware for method override
 router.use(methodOverride('_method'));
 
-// middleware to call below functions when on index page and rendering to index page
+
 router.get('/', authenticate, showFavorites, (req, res) => {
   res.render('index', {
     user: res.user,
@@ -17,7 +17,7 @@ router.get('/', authenticate, showFavorites, (req, res) => {
   });
 });
 
-// middleware to call below functions when on city page and rendering to city page
+
 router.get('/food', authenticate, searchFood, showFavorites, (req, res) => {
   res.render('food', {
     user: res.user,
