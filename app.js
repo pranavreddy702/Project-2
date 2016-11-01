@@ -5,17 +5,21 @@ const logger = require('morgan');
 const path = require('path');
 const fetch = require('node-fetch');
 const app = express();
-const PORT = process.env.PORT || 3000
+
 const bodyParser      = require('body-parser');
 const session         = require('express-session');
 const cookieParser    = require('cookie-parser');
 const methodOverride  = require('method-override');
 const SECRET          = 'iliketocode';
+const authRouter      = require('./routes/auth');
+
+
 
 
 // Routing module vairables
 const homeRouter = require('./routes/home');
 const userRouter = require('./routes/users');
+
 
 // look in the public folder
 app.use(express.static(path.join(__dirname, '/public')));
@@ -40,8 +44,9 @@ app.use(session({
 // tell app to use routing modules at assigned url
 app.use('/', homeRouter);
 app.use('/users', userRouter);
+app.use('/auth', authRouter);
 
-
+const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
   console.log('server up and running on PORT', PORT)
 });
