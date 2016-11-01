@@ -1,11 +1,16 @@
 const router = require('express').Router();
 const { findFood } = require('../services/nutrition');
 
-router.get('/', findFood, (req, res) => {
-  console.log(res.nutrition);
-  res.render('index', {
-    food: res.nutrition,
-  });
+router.get('/', (req, res) => {
+  res.render('index');
+});
+
+router.get('/signup', (req, res) => {
+  res.render('signup');
+});
+
+router.get('/login', (req, res) => {
+  res.render('login');
 });
 
 module.exports = router;

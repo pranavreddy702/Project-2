@@ -1,0 +1,52 @@
+body {
+  background-color: blue;
+  text-align: center;
+  background-image: url(http://image.vtc.vn/files/news/2016/09/27/cach-phan-biet-trai-cay-ngam-tam-hoa-chat-thuc-chin-102911.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: lightgreen;
+}
+
+#sign {
+   text-align: center;
+}
+form {
+  padding: 0.5rem;
+  border-radius: 9px;
+  background: rgba(black, 0.5);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: -1;
+}
+
+span {
+  flex: 0 0 8rem;
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  flex: 0 0 8rem;
+  margin-left: 10px;
+}
+#signup {
+  background: url(http://www.vernonvalleyfarm.com/wp-content/uploads/2014/08/photo.jpg);
+}
+
+#heading {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+
+}

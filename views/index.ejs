@@ -4,12 +4,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Nutrition Guide</title>
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/main.css">
-<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
-  <script src="/js/script.js" type="text/javascript" async defer></script>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+
 </head>
 <body>
-<h2><%= food %></h2>
+
+<a href="/login">LOGIN</a>
+<h2><%= result.hits[0] %></h2>
+<a href="/signup">SIGN UP</a>
 </body>
 </html>

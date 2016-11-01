@@ -1,23 +1,45 @@
+//makes sure the .env file is being accessed
 require('dotenv').config();
-
 const express = require('express');
 const logger = require('morgan');
-
+const path = require('path');
 const fetch = require('node-fetch');
 const app = express();
 const PORT = process.env.PORT || 3000
+const bodyParser      = require('body-parser');
+const session         = require('express-session');
+const cookieParser    = require('cookie-parser');
+const methodOverride  = require('method-override');
+const SECRET          = 'iliketocode';
 
+
+// Routing module vairables
 const homeRouter = require('./routes/home');
+const userRouter = require('./routes/users');
+
+// look in the public folder
+app.use(express.static(path.join(__dirname, '/public')));
+
 
 app.use(logger('dev'));
-app.use('/', homeRouter);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser());
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
+
+app.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: SECRET
+}));
+
+
+// tell app to use routing modules at assigned url
+app.use('/', homeRouter);
+app.use('/users', userRouter);
 
 
 app.listen(PORT, () => {
