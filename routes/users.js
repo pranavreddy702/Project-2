@@ -1,9 +1,16 @@
 const express = require('express');
 const { createUser }    = require('../models/user.js');
-const userRouter = express.Router();
+const { authenticate } = require('../lib/auth');
+const usersRouter = express.Router();
 
-userRouter.post('/', createUser, (req, res) => {
-  res.redirect('login')
-})
+usersRouter.post('/', createUser, (req, res) => {
+  res.redirect('/')
+});
 
-module.exports = userRouter;
+usersRouter.get('/profile', authenticate, (req, res) => {
+  res.render('users/profile', { user: res.user });
+});
+
+module.exports = usersRouter;
+
+
