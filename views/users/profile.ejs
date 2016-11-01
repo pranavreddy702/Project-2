@@ -8,9 +8,8 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
   </head>
   <body>
-
     <h1><%= user.username %> has logged in.</h1>
-    <a href="/food">Food Search</a>
+    <a href="/index/food">Food Search</a>
     <form action="/auth?_method=DELETE" method="post">
       <input type="submit" value="Sign Out" id="signout">
     </form>

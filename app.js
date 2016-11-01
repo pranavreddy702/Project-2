@@ -11,15 +11,12 @@ const session         = require('express-session');
 const cookieParser    = require('cookie-parser');
 const methodOverride  = require('method-override');
 const SECRET          = 'iliketocode';
-const authRouter      = require('./routes/auth');
-
-
-
 
 // Routing module vairables
 const homeRouter = require('./routes/home');
 const userRouter = require('./routes/users');
-
+const indexRouter = require('./routes/index');
+const authRouter   = require('./routes/auth');
 
 // look in the public folder
 app.use(express.static(path.join(__dirname, '/public')));
@@ -40,11 +37,11 @@ app.use(session({
   secret: SECRET
 }));
 
-
 // tell app to use routing modules at assigned url
 app.use('/', homeRouter);
 app.use('/users', userRouter);
 app.use('/auth', authRouter);
+app.use('/index', indexRouter);
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
